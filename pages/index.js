@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Buy my products</h1>
+        <h1 className={styles.title}>Buy Products (Pushed to git)</h1>
 
         <div className={styles.grid}>
           <button
