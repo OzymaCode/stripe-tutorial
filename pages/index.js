@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { checkout } from '../checkout'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -15,17 +16,41 @@ export default function Home() {
         <h1 className={styles.title}>Buy my products</h1>
 
         <div className={styles.grid}>
-          <a href="" className={styles.card}>
+          <button
+            onClick={() => {
+              checkout({
+                lineItems: [
+                  {
+                    price: 'price_1MEdbhJp3hKD1Is502i74thZ',
+                    quantity: 1,
+                  },
+                ],
+              })
+            }}
+            href=""
+            className={styles.card}
+          >
             <h2>Product 1 &rarr;</h2>
             <p>$49.99</p>
-            {/* price_1MEdbhJp3hKD1Is502i74thZ */}
-          </a>
+          </button>
 
-          <a href="" className={styles.card}>
+          <button
+            onClick={() => {
+              checkout({
+                lineItems: [
+                  {
+                    price: 'price_1MEdbzJp3hKD1Is52hLX4jbV',
+                    quantity: 1,
+                  },
+                ],
+              })
+            }}
+            href=""
+            className={styles.card}
+          >
             <h2>Product 2 &rarr;</h2>
             <p>$34.95</p>
-            {/* price_1MEdbzJp3hKD1Is52hLX4jbV */}
-          </a>
+          </button>
         </div>
       </main>
     </div>
